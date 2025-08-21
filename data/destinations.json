@@ -1,0 +1,64 @@
+{
+	"regions": [
+		{
+			"code": "DOM",
+			"name": "Domestic (Australia)",
+			"ratePerDay": 2.0,
+			"includes": ["AU"]
+		},
+		{
+			"code": "USCA",
+			"name": "USA/Canada",
+			"ratePerDay": 6.0,
+			"includes": ["US", "CA"],
+			"notes": "Higher medical costs apply"
+		},
+		{
+			"code": "EUR",
+			"name": "Europe",
+			"ratePerDay": 5.0,
+			"includes": [
+				"FR",
+				"DE",
+				"IT",
+				"ES",
+				"GB",
+				"NL",
+				"GR",
+				"PT",
+				"IE",
+				"CH",
+				"AT",
+				"SE",
+				"NO",
+				"DK"
+			]
+		},
+		{
+			"code": "ASIA",
+			"name": "Asia (excl. Japan)",
+			"ratePerDay": 3.2,
+			"includes": ["SG", "MY", "TH", "VN", "ID", "PH", "CN", "HK"]
+		},
+		{ "code": "JPN", "name": "Japan", "ratePerDay": 4.0, "includes": ["JP"] },
+		{
+			"code": "NZ",
+			"name": "New Zealand",
+			"ratePerDay": 2.4,
+			"includes": ["NZ"]
+		},
+		{
+			"code": "BALI",
+			"name": "Bali (Indonesia)",
+			"ratePerDay": 3.0,
+			"includes": ["ID-BALI"]
+		},
+		{
+			"code": "THA",
+			"name": "Thailand",
+			"ratePerDay": 3.0,
+			"includes": ["TH"]
+		},
+		{ "code": "IND", "name": "India", "ratePerDay": 3.3, "includes": ["IN"] }
+	]
+}

@@ -1,0 +1,89 @@
+{
+	"hero": {
+		"heading": "Travel Insurance",
+		"subheading": "For adventures at home or abroad, insure your trips with ACME."
+	},
+	"alert": {
+		"text": "Current events may affect your policy coverage for some destinations. Check official travel advisories before you buy.",
+		"links": [
+			{ "label": "Smartraveller", "href": "#" },
+			{ "label": "ACME Travel Alerts", "href": "#" }
+		]
+	},
+	"planTeasers": [
+		{
+			"planCode": "BASIC",
+			"tagline": "Essentials for a single overseas trip",
+			"bullets": ["Emergency medical", "Baggage cover", "Rental car excess"]
+		},
+		{
+			"planCode": "STANDARD",
+			"tagline": "Our highest level for a single trip",
+			"bullets": [
+				"Higher medical & cancellation",
+				"Increased baggage cover",
+				"COVID-19 benefits*"
+			]
+		},
+		{
+			"planCode": "SUPER",
+			"tagline": "Multiple trips for 12 months",
+			"bullets": [
+				"Unlimited trips",
+				"Max 30 days per trip",
+				"Great for frequent travellers"
+			]
+		}
+	],
+	"covid": {
+		"title": "COVID-19 benefits",
+		"bullets": [
+			"Options that include trip cancellation cover",
+			"Overseas medical & hospital expenses if diagnosed during cover**"
+		],
+		"cta": { "label": "Learn more", "href": "#" }
+	},
+	"addOns": [
+		{
+			"name": "Adventure Pack",
+			"desc": "Extra cover for select adventure activities."
+		},
+		{ "name": "Cruise Pack", "desc": "Enhance cover when cruising." },
+		{
+			"name": "Snow Pack",
+			"desc": "Add cover for snow sports on eligible plans."
+		}
+	],
+	"coverOptions": [
+		{
+			"name": "Single",
+			"desc": "You + dependants under 25 (not in full-time employment) travelling 100% of the journey."
+		},
+		{
+			"name": "Duo",
+			"desc": "You and one companion travelling together for at least 75% of the journey."
+		},
+		{
+			"name": "Family",
+			"desc": "You, your partner, and eligible dependants under 25 (not in full-time employment)."
+		}
+	],
+	"faqs": [
+		{
+			"q": "What is travel insurance?",
+			"a": "It helps cover unexpected events like medical expenses, trip delays, or lost/stolen items when travelling."
+		},
+		{
+			"q": "When should I buy?",
+			"a": "As soon as you book—so you can be covered for cancellation before you depart (where included)."
+		},
+		{
+			"q": "Do you cover COVID-19?",
+			"a": "Selected benefits may apply depending on the plan. Check the PDS and plan summary for details."
+		}
+	],
+	"footnotes": [
+		"* Featured benefits depend on the plan you select.",
+		"** Subject to terms, conditions, limits and sub-limits. Read the PDS before purchase."
+	]
+}

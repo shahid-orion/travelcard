@@ -1,0 +1,130 @@
+/* /styles/components/navbar.css */
+
+/* Layout placement: header full-width, then nav, then page content */
+.app-container {
+	display: grid;
+	grid-template-rows: auto auto 1fr; /* header | nav | content */
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		'header'
+		'nav'
+		'main';
+	height: 100vh;
+}
+#header-slot {
+	grid-area: header;
+}
+#topnav-slot {
+	grid-area: nav;
+}
+#page-outlet {
+	grid-area: main;
+	min-width: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Top nav look */
+.topnav {
+	position: sticky;
+	top: calc(0px + 0px); /* sits under sticky header */
+	background: #ffffff;
+	border-bottom: 1px solid var(--border);
+	z-index: 800; /* under header (900), above content */
+}
+
+/* Inner: horizontally scrollable row with nice gap */
+.topnav .topnav-inner {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 8px 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	overflow-x: auto;
+	scrollbar-width: thin;
+}
+.topnav .topnav-inner::-webkit-scrollbar {
+	height: 6px;
+}
+.topnav .topnav-inner::-webkit-scrollbar-thumb {
+	background: #d1d5db;
+	border-radius: 999px;
+}
+
+/* Items: pill buttons with subtle hover/active animations */
+.topnav-item {
+	--pill-bg: #ffffff;
+	--pill-border: var(--border);
+
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 12px;
+	border-radius: 999px;
+	text-decoration: none;
+
+	color: var(--text);
+	background: var(--pill-bg);
+	border: 1px solid var(--pill-border);
+
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
+		border-color 0.2s ease;
+}
+.topnav-item i {
+	font-size: 0.95rem;
+}
+.topnav-item:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+	border-color: #cbd5e1;
+}
+.topnav-item.active {
+	color: #fff;
+	background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+	border-color: transparent;
+	box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+}
+
+/* Underline accent on hover (nice touch) */
+.topnav-item span {
+	position: relative;
+}
+.topnav-item:hover span::after,
+.topnav-item.active span::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -3px;
+	height: 2px;
+	border-radius: 2px;
+	background: currentColor;
+	opacity: 0.35;
+}
+
+/* Responsive: on narrow screens, hide text to save space; the menu button toggles visibility */
+@media (max-width: 700px) {
+	.topnav {
+		display: none; /* hidden by default on phones */
+	}
+	.topnav.open {
+		display: block; /* shown when header .menu-toggle is tapped */
+	}
+	.menu-toggle {
+		display: block;
+	}
+
+	/* When open on phones, stack items in rows */
+	.topnav .topnav-inner {
+		grid-auto-flow: row;
+		grid-template-columns: 1fr 1fr;
+		grid-auto-columns: unset;
+		overflow-x: hidden;
+	}
+	.topnav-item {
+		justify-content: center;
+	}
+}

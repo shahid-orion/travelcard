@@ -1,0 +1,53 @@
+{
+	"plans": [
+		{
+			"code": "BASIC",
+			"name": "Basic",
+			"multiplier": 1.0,
+			"benefits": {
+				"medical": 250000,
+				"luggage": 2500,
+				"cancellation": 2000,
+				"rentalExcess": 2000
+			},
+			"highlights": [
+				"Emergency medical cover",
+				"Essential baggage cover",
+				"Rental vehicle excess"
+			]
+		},
+		{
+			"code": "STANDARD",
+			"name": "Standard",
+			"multiplier": 1.6,
+			"benefits": {
+				"medical": 1000000,
+				"luggage": 8000,
+				"cancellation": 10000,
+				"rentalExcess": 5000
+			},
+			"highlights": [
+				"Higher medical & cancellation limits",
+				"Increased baggage cover",
+				"More rental vehicle cover"
+			]
+		},
+		{
+			"code": "SUPER",
+			"name": "Super",
+			"multiplier": 1.3,
+			"benefits": {
+				"medical": 1000000,
+				"luggage": 6000,
+				"cancellation": 8000,
+				"rentalExcess": 5000
+			},
+			"annualMaxTripDays": 30,
+			"highlights": [
+				"Unlimited trips for 12 months",
+				"Max 30 days per trip",
+				"Great for frequent travellers"
+			]
+		}
+	]
+}

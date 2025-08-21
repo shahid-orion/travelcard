@@ -1,0 +1,6 @@
+{
+	"gst": 0.1,
+	"stampDuty": 0.05,
+	"commission": 0.15,
+	"commissionTax": 0.1
+}

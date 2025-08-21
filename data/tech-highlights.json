@@ -1,0 +1,52 @@
+[
+	{
+		"icon": "fa-shield-halved",
+		"label": "OAuth2 / OIDC Ready",
+		"title": "OAuth 2.0 & OpenID Connect"
+	},
+	{
+		"icon": "fa-key",
+		"label": "Advanced MFA",
+		"title": "TOTP, SMS/Email, Push-ready"
+	},
+	{
+		"icon": "fa-user-lock",
+		"label": "SSO (SAML 2.0)",
+		"title": "Enterprise single sign-on"
+	},
+	{
+		"icon": "fa-lock",
+		"label": "Zero Trust",
+		"title": "Least privilege & scoped tokens"
+	},
+	{
+		"icon": "fa-shield",
+		"label": "TLS 1.3 / AES-256",
+		"title": "Encryption in transit & at rest"
+	},
+	{
+		"icon": "fa-clipboard-check",
+		"label": "Audit & Compliance",
+		"title": "Audit trails, ISO27001/SOC2 aligned"
+	},
+	{
+		"icon": "fa-diagram-project",
+		"label": ".NET 8 Services",
+		"title": "Modern, high-performance APIs"
+	},
+	{
+		"icon": "fa-vuejs",
+		"label": "Vue 3 SPA",
+		"title": "Fast, modern front-end (or React)"
+	},
+	{
+		"icon": "fa-cloud",
+		"label": "Cloud-Native",
+		"title": "Azure/AWS ready, CI/CD"
+	},
+	{
+		"icon": "fa-book-open",
+		"label": "OpenAPI / REST",
+		"title": "Typed SDKs & partner integrations"
+	}
+]
