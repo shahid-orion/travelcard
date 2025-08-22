@@ -677,3 +677,160 @@ textarea.form-control {
 		font-size: var(--text-base);
 	}
 }
+
+/* ===============================
+   LABEL-LEFT • ANSWER-RIGHT LAYOUT (desktop)
+   Works for Insured / Travel / Risk without HTML changes
+   =============================== */
+
+.page-insured,
+.page-travel,
+.page-risk {
+	--label-w: 260px; /* tweak once for all pages */
+	--gap-x: 18px;
+	--gap-y: 12px;
+}
+
+/* --- Insured Details (your markup already close; switch to grid) --- */
+.page-insured .form-row {
+	display: grid;
+	grid-template-columns: var(--label-w) 1fr;
+	column-gap: var(--gap-x);
+	row-gap: var(--gap-y);
+	align-items: center;
+}
+.page-insured .form-label {
+	margin-bottom: 0;
+	padding-right: 0;
+}
+.page-insured .form-group-row {
+	gap: var(--gap-x);
+} /* ABN/ACN row stays as-is */
+
+/* --- Travel Details --- */
+/* Single row: Label | Control */
+.page-travel .qw-row {
+	display: grid;
+	grid-template-columns: var(--label-w) 1fr;
+	column-gap: var(--gap-x);
+	row-gap: var(--gap-y);
+	align-items: center;
+}
+.page-travel .qw-row .form-label {
+	margin-bottom: 0;
+}
+
+/* Two-up row (Depart/Return, Travellers/Cover):
+   turn each wrapper <div> into 'contents' so their label+input
+   participate in the parent 4-column grid. */
+.page-travel .qw-row.two {
+	grid-template-columns:
+		var(--label-w) 1fr
+		var(--label-w) 1fr;
+}
+.page-travel .qw-row.two > div {
+	display: contents;
+}
+
+/* Ages row */
+.page-travel #agesRow {
+	grid-template-columns: var(--label-w) 1fr;
+}
+
+/* --- Risk Details --- */
+/* Grid rows with two questions per row: (L|C) (L|C) */
+.page-risk .form-grid {
+	display: grid;
+	grid-template-columns:
+		var(--label-w) 1fr
+		var(--label-w) 1fr;
+	column-gap: var(--gap-x);
+	row-gap: var(--gap-y);
+	align-items: center;
+}
+/* Flatten each .form-group so its label+control land in the grid cells */
+.page-risk .form-grid .form-group {
+	display: contents;
+}
+.page-risk .form-grid .form-label {
+	margin-bottom: 0;
+}
+
+/* Single, full-width questions in Risk (those not inside .form-grid) */
+.page-risk form > .form-group {
+	display: grid;
+	grid-template-columns: var(--label-w) 1fr;
+	column-gap: var(--gap-x);
+	row-gap: var(--gap-y);
+	align-items: center;
+}
+.page-risk form > .form-group .form-label {
+	margin-bottom: 0;
+}
+
+/* ===============================
+   RESPONSIVE: stack on narrow screens
+   =============================== */
+@media (max-width: 992px) {
+	.page-insured .form-row,
+	.page-travel .qw-row,
+	.page-risk form > .form-group {
+		grid-template-columns: 1fr; /* label above control on mobile */
+	}
+	.page-travel .qw-row.two,
+	.page-risk .form-grid {
+		grid-template-columns: 1fr; /* each item becomes its own row */
+	}
+	.page-travel .qw-row.two > div {
+		display: block;
+	}
+}
+
+/* ===============================
+   PAGE: Premium Summary
+   =============================== */
+
+.page-premium .form-section:last-of-type {
+	margin-bottom: 0;
+}
+.page-premium {
+	width: 62%;
+}
+
+/* Value “fields” that look like readonly inputs */
+.page-premium .premium-value {
+	flex: 1; /* align with .form-control width */
+	min-width: 250px;
+	padding: 0.875rem var(--space-md);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+	background: #fff;
+	font-weight: 700;
+	font-size: var(--text-base);
+	color: var(--text);
+	text-align: right;
+	box-shadow: inset 0 1px 0 var(--border-light);
+	font-variant-numeric: tabular-nums; /* nice alignment for amounts */
+}
+
+/* Divider before the total row, like a summary footer */
+.page-premium .form-row.total {
+	border-top: 1px solid var(--border);
+	padding-top: var(--space-lg);
+	margin-top: var(--space-md);
+}
+
+/* Emphasize the final amount */
+.page-premium .premium-value.total-amount {
+	font-weight: 800;
+	color: var(--primary-dark);
+	box-shadow: inset 0 0 0 1px var(--primary-light);
+}
+
+/* Keep it responsive just like other pages */
+@media (max-width: 992px) {
+	.page-premium .premium-value {
+		width: 100%;
+		min-width: 0;
+	}
+}
