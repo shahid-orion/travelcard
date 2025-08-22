@@ -1,0 +1,116 @@
+<!-- /pages/RiskDetails.html -->
+<section class="page-risk">
+	<div class="card">
+		<div class="card-header">
+			<div class="card-title">Risk Details (Extra Info)</div>
+		</div>
+
+		<form id="riskForm" novalidate>
+			<div class="form-grid">
+				<div class="form-group">
+					<label class="form-label" for="supplierName"
+						>Supplier Email Name</label
+					>
+					<input id="supplierName" type="text" class="form-control" />
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="supplierEmail"
+						>Supplier Email Address</label
+					>
+					<input id="supplierEmail" type="email" class="form-control" />
+				</div>
+			</div>
+
+			<div class="form-grid">
+				<div class="form-group">
+					<label class="form-label" for="returnPolicy"
+						>Return Policy Control</label
+					>
+					<select id="returnPolicy" class="form-control">
+						<option>No</option>
+						<option>Yes</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="finishRate"
+						>FinishRate ReturnCode</label
+					>
+					<select id="finishRate" class="form-control">
+						<option>Ok</option>
+						<option>Fail</option>
+						<option>Hold</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-grid">
+				<div class="form-group">
+					<label class="form-label" for="processStatus">Process Status</label>
+					<select id="processStatus" class="form-control">
+						<option>Complete</option>
+						<option>Pending</option>
+						<option>Error</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="deleteReturn">Delete ReturnCode</label>
+					<select id="deleteReturn" class="form-control">
+						<option>Ok</option>
+						<option>Fail</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-grid">
+				<div class="form-group">
+					<label class="form-label" for="notifyDelay">Notification Delay</label>
+					<select id="notifyDelay" class="form-control">
+						<option value="0">0</option>
+						<option value="5">5</option>
+						<option value="10">10</option>
+						<option value="30">30</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="mrrReturn"
+						>Submit For MRR ReturnCode</label
+					>
+					<select id="mrrReturn" class="form-control">
+						<option>Ok</option>
+						<option>Fail</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="form-label" for="errorSession">Error SessionId</label>
+				<input id="errorSession" type="text" class="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label class="form-label" for="printNotes">Printing Notes</label>
+				<textarea id="printNotes" class="form-control" rows="3"></textarea>
+			</div>
+
+			<div class="form-group">
+				<label class="form-label" for="downloadData">Download Data</label>
+				<textarea id="downloadData" class="form-control" rows="3"></textarea>
+			</div>
+
+			<div class="actions" style="padding-left: 0; padding-right: 0">
+				<button type="button" class="btn btn-primary">
+					<i class="fas fa-check"></i> Done
+				</button>
+				<button type="button" class="btn btn-outline">
+					<i class="fas fa-times"></i> Cancel
+				</button>
+				<button type="button" class="btn btn-outline">
+					<i class="fas fa-bug"></i> Error Response
+				</button>
+				<button type="button" class="btn btn-outline">
+					<i class="fas fa-plug"></i> HTTP Timeout
+				</button>
+			</div>
+		</form>
+	</div>
+</section>

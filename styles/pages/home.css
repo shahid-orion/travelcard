@@ -1,6 +1,9 @@
 /* /styles/pages/home.css */
 
-/* Scope + layout tokens */
+/* ===============================
+   SCOPE & LAYOUT TOKENS
+   =============================== */
+
 .page-home {
 	--container: 1120px;
 	--gutter: 16px;
@@ -23,11 +26,81 @@
 	/* overflow-y: auto; */
 }
 
-/* ---------------- HERO ---------------- */
-.page-home.hero-wrap {
-	position: relative;
-	min-height: var(--hero-min);
+/* ===============================
+   ANIMATIONS & KEYFRAMES
+   =============================== */
+
+@keyframes heroPanZoom {
+	0% {
+		transform: scale(1.02) translateY(0);
+	}
+	33% {
+		transform: scale(1.06) translateY(-3px) translateX(2px);
+	}
+	66% {
+		transform: scale(1.04) translateY(2px) translateX(-2px);
+	}
+	100% {
+		transform: scale(1.02) translateY(0);
+	}
 }
+
+/* ===============================
+   LAYOUT COMPONENTS
+   =============================== */
+
+/* App Container Layout */
+.app-container {
+	display: grid;
+	grid-template-rows: auto auto 1fr; /* header | nav | content */
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		'header'
+		'nav'
+		'main';
+	height: 100vh;
+}
+
+#header-slot {
+	grid-area: header;
+}
+
+#topnav-slot {
+	grid-area: nav;
+}
+
+#page-outlet {
+	grid-area: main;
+	/* min-width: 0; */
+	max-width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+
+	/* Center content with max-width */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 20px;
+}
+
+/* Make sure full-width elements like hero background still work */
+#page-outlet .hero-wrap {
+	/* position: relative; */
+	width: 100vw;
+	height: 50%;
+	/* position: relative; */
+	/* min-height: var(--hero-min); */
+	/* left: 50%;
+	right: 50%; */
+	/* margin-left: -50vw;
+	margin-right: -50vw; */
+	/* overflow-x: hidden; */
+}
+
+/* ===============================
+   HERO SECTION
+   =============================== */
 
 .page-home .hero-bg {
 	position: absolute;
@@ -42,6 +115,9 @@
 			center/cover no-repeat;
 	transform: scale(1.02);
 	will-change: transform;
+	animation: heroPanZoom 24s ease-in-out infinite;
+	width: 100%;
+	height: 50%;
 }
 
 /* Enhanced glow effect */
@@ -74,6 +150,7 @@
 	display: flex;
 	align-items: center;
 }
+
 .page-home .hero-copy {
 	color: #fff;
 	max-width: 760px;
@@ -89,6 +166,7 @@
 		inset 0 1px 0 rgba(255, 255, 255, 0.4);
 	backdrop-filter: blur(12px) saturate(180%);
 }
+
 @supports not (backdrop-filter: blur(12px)) {
 	.page-home .hero-copy {
 		background: rgba(0, 0, 0, 0.35);
@@ -103,12 +181,14 @@
 	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 	margin-bottom: 12px;
 }
+
 .page-home .hero-sub {
 	font-size: clamp(16px, 2.6vw, 20px);
 	opacity: 0.96;
 	line-height: 1.4;
 	margin-bottom: 24px;
 }
+
 .page-home .hero-copy .btn {
 	margin-top: 0;
 	padding: 14px 28px;
@@ -121,37 +201,23 @@
 	font-weight: 600;
 	font-size: 16px;
 }
+
 .page-home .hero-copy .btn:hover {
 	transform: translateY(-3px);
 	box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
 	background: #ea580c;
 }
 
-/* Enhanced background animation */
-@keyframes heroPanZoom {
-	0% {
-		transform: scale(1.02) translateY(0);
-	}
-	33% {
-		transform: scale(1.06) translateY(-3px) translateX(2px);
-	}
-	66% {
-		transform: scale(1.04) translateY(2px) translateX(-2px);
-	}
-	100% {
-		transform: scale(1.02) translateY(0);
-	}
-}
-.page-home .hero-bg {
-	animation: heroPanZoom 24s ease-in-out infinite;
-}
+/* ===============================
+   ALERT SECTION
+   =============================== */
 
-/* -------------- ALERT (under hero) -------------- */
 .page-home .alert-mount {
 	background: linear-gradient(to right, #fff7ed, #fed7aa);
 	border-top: 1px solid #fdba74;
 	border-bottom: 1px solid #fdba74;
 }
+
 .page-home .alert-mount .alert-bar {
 	max-width: var(--container);
 	margin: 0 auto;
@@ -163,21 +229,27 @@
 	color: #9a3412;
 	font-weight: 500;
 }
+
 .page-home .alert-bar i {
 	margin-right: 6px;
 	font-size: 18px;
 }
+
 .page-home .alert-bar .link {
 	color: #7c2d12;
 	text-decoration: underline;
 	font-weight: 600;
 	transition: var(--transition);
 }
+
 .page-home .alert-bar .link:hover {
 	color: #ea580c;
 }
 
-/* -------------- MARKETING -------------- */
+/* ===============================
+   MARKETING SECTION
+   =============================== */
+
 .page-home .marketing-mount {
 	max-width: var(--container);
 	margin: 30px auto 40px;
@@ -220,6 +292,20 @@
 	gap: 10px;
 }
 
+/* COVID Section */
+.page-home .marketing-section:nth-child(2) {
+	background: linear-gradient(to right, #fef3c7, #fed7aa);
+	border-color: #fdba74;
+}
+
+.page-home .marketing-section:nth-child(2) .section-title {
+	color: #9a3412;
+}
+
+/* ===============================
+   GRID LAYOUTS
+   =============================== */
+
 .page-home .teasers-grid,
 .page-home .covers-grid,
 .page-home .addons-grid {
@@ -227,6 +313,10 @@
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
 }
+
+/* ===============================
+   CARD COMPONENTS
+   =============================== */
 
 .page-home .teaser-card,
 .page-home .cover-card,
@@ -267,6 +357,10 @@
 	opacity: 1;
 }
 
+/* ===============================
+   TEASER COMPONENTS
+   =============================== */
+
 .page-home .teaser-title {
 	font-weight: 700;
 	margin-bottom: 8px;
@@ -295,51 +389,10 @@
 	color: var(--primary);
 }
 
-.page-home .btn-link {
-	font-weight: 600;
-	text-decoration: none;
-	color: var(--primary);
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	transition: var(--transition);
-}
+/* ===============================
+   COVER COMPONENTS
+   =============================== */
 
-.page-home .btn-link:hover {
-	color: var(--accent);
-	gap: 8px;
-}
-
-/* COVID Section */
-.page-home .marketing-section:nth-child(2) {
-	background: linear-gradient(to right, #fef3c7, #fed7aa);
-	border-color: #fdba74;
-}
-
-.page-home .marketing-section:nth-child(2) .section-title {
-	color: #9a3412;
-}
-
-/* Addons */
-.page-home .addon-name {
-	font-weight: 700;
-	margin-bottom: 8px;
-	color: var(--primary-dark);
-	display: flex;
-	align-items: center;
-	gap: 8px;
-}
-
-.page-home .addon-name i {
-	color: var(--accent);
-}
-
-.page-home .addon-desc {
-	color: var(--text-light);
-	font-size: 14px;
-}
-
-/* Covers */
 .page-home .cover-name {
 	font-weight: 700;
 	margin-bottom: 8px;
@@ -360,7 +413,51 @@
 	line-height: 1.5;
 }
 
-/* FAQs */
+/* ===============================
+   ADDON COMPONENTS
+   =============================== */
+
+.page-home .addon-name {
+	font-weight: 700;
+	margin-bottom: 8px;
+	color: var(--primary-dark);
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.page-home .addon-name i {
+	color: var(--accent);
+}
+
+.page-home .addon-desc {
+	color: var(--text-light);
+	font-size: 14px;
+}
+
+/* ===============================
+   LINK COMPONENTS
+   =============================== */
+
+.page-home .btn-link {
+	font-weight: 600;
+	text-decoration: none;
+	color: var(--primary);
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	transition: var(--transition);
+}
+
+.page-home .btn-link:hover {
+	color: var(--accent);
+	gap: 8px;
+}
+
+/* ===============================
+   FAQ COMPONENTS
+   =============================== */
+
 .page-home .faq-list {
 	display: grid;
 	gap: 12px;
@@ -415,7 +512,10 @@
 	line-height: 1.6;
 }
 
-/* Footnotes */
+/* ===============================
+   FOOTNOTES
+   =============================== */
+
 .page-home .footnotes {
 	margin-top: 30px;
 	padding: 20px;
@@ -431,7 +531,9 @@
 	line-height: 1.5;
 }
 
-/* ---------- Responsive ---------- */
+/* ===============================
+   RESPONSIVE STYLES
+   =============================== */
 
 /* Wider desktops */
 @media (min-width: 1400px) {
@@ -481,7 +583,24 @@
 	}
 }
 
-/* Accessibility: respect reduced motion */
+/* Page outlet responsive adjustments */
+@media (max-width: 768px) {
+	#page-outlet > * {
+		padding: 0 16px;
+	}
+}
+
+@media (max-width: 480px) {
+	#page-outlet > * {
+		padding: 0 12px;
+	}
+}
+
+/* ===============================
+   ACCESSIBILITY
+   =============================== */
+
+/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
 	.page-home {
 		--transition: none;

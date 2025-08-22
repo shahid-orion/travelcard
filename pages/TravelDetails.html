@@ -1,0 +1,54 @@
+<!-- /pages/TravelDetails.html -->
+<section class="page-travel">
+	<div class="card">
+		<div class="card-header">
+			<div class="card-title">Travel Details</div>
+		</div>
+
+		<!-- Reuses your quote widget structure/IDs so existing logic can work -->
+		<form id="travelForm" novalidate>
+			<div class="qw-row">
+				<label class="form-label" for="destinationSelect">Destination</label>
+				<select id="destinationSelect" class="form-control"></select>
+			</div>
+
+			<div class="qw-row two">
+				<div>
+					<label class="form-label" for="startDate">Depart</label>
+					<input id="startDate" type="date" class="form-control" />
+				</div>
+				<div>
+					<label class="form-label" for="endDate">Return</label>
+					<input id="endDate" type="date" class="form-control" />
+				</div>
+			</div>
+
+			<div class="qw-row two">
+				<div>
+					<label class="form-label" for="travellersSelect">Travellers</label>
+					<select id="travellersSelect" class="form-control"></select>
+				</div>
+				<div>
+					<label class="form-label" for="coverTypeSelect">Cover type</label>
+					<select id="coverTypeSelect" class="form-control"></select>
+				</div>
+			</div>
+
+			<!-- Ages appear after Travellers -->
+			<div class="qw-row" id="agesRow" hidden>
+				<label class="form-label">Ages</label>
+				<div id="agesContainer" class="ages-container"></div>
+			</div>
+
+			<button type="button" id="getQuoteBtn" class="btn btn-primary full">
+				Get a Quote
+			</button>
+
+			<div class="qw-note">
+				By continuing you agree to our
+				<a href="#/legal-pds" class="link">PDS</a> &
+				<a href="#/legal-terms" class="link">Terms</a>.
+			</div>
+		</form>
+	</div>
+</section>

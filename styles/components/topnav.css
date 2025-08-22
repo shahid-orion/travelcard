@@ -1,29 +1,5 @@
 /* /styles/components/navbar.css */
 
-/* Layout placement: header full-width, then nav, then page content */
-.app-container {
-	display: grid;
-	grid-template-rows: auto auto 1fr; /* header | nav | content */
-	grid-template-columns: 1fr;
-	grid-template-areas:
-		'header'
-		'nav'
-		'main';
-	height: 100vh;
-}
-#header-slot {
-	grid-area: header;
-}
-#topnav-slot {
-	grid-area: nav;
-}
-#page-outlet {
-	grid-area: main;
-	min-width: 0;
-	overflow: auto;
-	-webkit-overflow-scrolling: touch;
-}
-
 /* Top nav look */
 .topnav {
 	position: sticky;

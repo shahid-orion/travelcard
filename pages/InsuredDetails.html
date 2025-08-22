@@ -1,0 +1,161 @@
+<!-- /pages/InsuredDetails.html -->
+<section class="page-insured">
+	<div class="card">
+		<div class="card-header">
+			<div class="card-title">Insured Details</div>
+		</div>
+
+		<form id="insuredForm" novalidate>
+			<!-- Company -->
+			<div class="form-section">
+				<h3 class="section-title">Company</h3>
+				<div class="form-row">
+					<label for="companyName" class="form-label">
+						Company Name
+						<span class="required">*</span>
+					</label>
+					<input
+						id="companyName"
+						name="companyName"
+						type="text"
+						class="form-control"
+						placeholder="The Agency And The Agency & Co"
+						required
+					/>
+				</div>
+
+				<div class="form-row">
+					<label class="form-label">
+						Company Details
+						<span class="required">*</span>
+					</label>
+					<div class="form-group-row">
+						<div class="form-col">
+							<label for="abn" class="form-sub-label">ABN</label>
+							<input
+								id="abn"
+								name="abn"
+								inputmode="numeric"
+								pattern="[0-9 ]{11,14}"
+								class="form-control"
+								placeholder="42 603 332 056"
+							/>
+						</div>
+						<div class="form-col">
+							<label for="acn" class="form-sub-label">ACN</label>
+							<input
+								id="acn"
+								name="acn"
+								inputmode="numeric"
+								pattern="[0-9 ]{9,12}"
+								class="form-control"
+								placeholder="ACN"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Postal Address -->
+			<div class="form-section">
+				<h3 class="section-title">Company Postal Address</h3>
+				<div class="form-row">
+					<label class="form-label">
+						Location
+						<span class="required">*</span>
+					</label>
+					<div class="form-group-row">
+						<div class="form-col">
+							<label for="suburb" class="form-sub-label">Suburb</label>
+							<input
+								id="suburb"
+								name="suburb"
+								type="text"
+								class="form-control"
+								placeholder="MOSMAN"
+							/>
+						</div>
+						<div class="form-col">
+							<label for="state" class="form-sub-label">State</label>
+							<select id="state" name="state" class="form-control">
+								<option value="">Select state…</option>
+								<option>NSW</option>
+								<option>VIC</option>
+								<option>QLD</option>
+								<option>SA</option>
+								<option>WA</option>
+								<option>TAS</option>
+								<option>ACT</option>
+								<option>NT</option>
+							</select>
+						</div>
+						<div class="form-col">
+							<label for="postcode" class="form-sub-label">Postcode</label>
+							<input
+								id="postcode"
+								name="postcode"
+								inputmode="numeric"
+								pattern="[0-9]{4}"
+								class="form-control"
+								placeholder="2088"
+							/>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<label for="addr1" class="form-label">
+						Address Line 1
+						<span class="required">*</span>
+					</label>
+					<input
+						id="addr1"
+						name="addr1"
+						type="text"
+						class="form-control"
+						placeholder="50 Redan Street"
+						required
+					/>
+				</div>
+
+				<div class="form-row">
+					<label for="addr2" class="form-label">Address Line 2</label>
+					<input
+						id="addr2"
+						name="addr2"
+						type="text"
+						class="form-control"
+						placeholder="Address Line 2"
+					/>
+				</div>
+			</div>
+
+			<!-- Subsidiaries -->
+			<div class="form-section">
+				<h3 class="section-title">Subsidiaries</h3>
+				<div class="form-row">
+					<label for="subsidiaries" class="form-label"
+						>List subsidiaries (optional)</label
+					>
+					<textarea
+						id="subsidiaries"
+						name="subsidiaries"
+						class="form-control"
+						rows="3"
+						placeholder="Enter each subsidiary on a new line"
+					></textarea>
+				</div>
+			</div>
+
+			<!-- Actions -->
+			<div class="form-actions">
+				<button type="button" class="btn btn-outline">
+					<i class="fas fa-times"></i> Cancel
+				</button>
+				<button type="submit" class="btn btn-primary">
+					<i class="fas fa-arrow-right"></i> Save &amp; Continue
+				</button>
+			</div>
+		</form>
+	</div>
+</section>

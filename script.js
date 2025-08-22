@@ -1,11 +1,21 @@
 // script.js
 
+// ------- Routes: just HTML + optional init/destroy callbacks -------
 const ROUTES = {
-	'/home': { html: 'pages/home.html' },
-	// '/insured': { html: 'pages/insured.html' },
-	// '/travel': { html: 'pages/travel.html' },
-	// '/risk': { html: 'pages/risk.html' },
-	// '/summary': { html: 'pages/summary.html' },
+	'/home': {
+		html: 'pages/home.html',
+		init: (outlet) => window.PageHome?.init?.(outlet),
+		destroy: () => window.PageHome?.destroy?.(),
+	},
+	'/insured': { html: 'pages/InsuredDetails.html' },
+	'/travel': {
+		html: 'pages/TravelDetails.html',
+		// If you want the age/destination widgets to behave like Home, keep these:
+		init: (outlet) => window.PageHome?.init?.(outlet),
+		destroy: () => window.PageHome?.destroy?.(),
+	},
+	'/risk': { html: 'pages/RiskDetails.html' },
+	'/summary': { html: 'pages/PremiumSummary.html' },
 };
 
 const qs = (s, r = document) => r.querySelector(s);
